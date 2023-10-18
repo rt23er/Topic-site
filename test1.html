@@ -1,290 +1,310 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Python练习题目</title>
-<link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python练习题目</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
 </head>
+
 <body>
     <style>
-/* Navbar styles */
-.navbar {
-    background-color: #333;
-    overflow: hidden;
-}
-
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Centered content styles */
-.centered {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-}
-
-/* 模态框基本样式 */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.questionM{
-    width: auto;
-    height: fit-content;
-    padding: 10px;
-    margin: 30px;
-    background-color: rgb(203, 214, 214);
-    font-size: large;
-
-}
-
-.questionT{
-    width: auto;
-    height: fit-content;
-    padding: 10px;
-    margin: 30px;
-    background-color: rgb(120, 128, 128);
-    font-size: large;
-
-}
-
-
-#text-to-copy {
-            white-space: pre; /* 保留原格式和换行 */
+        /* Navbar styles */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
         }
 
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Centered content styles */
+        .centered {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        /* 模态框基本样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #da9595;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .questionM {
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin: 30px;
+            background-color: rgb(240, 243, 243);
+            font-size: large;
+
+        }
+
+        .questionT {
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin: 30px;
+            background-color: rgb(167, 187, 187);
+            font-size: large;
+
+        }
+
+
+        #text-to-copy {
+            white-space: pre;
+            /* 保留原格式和换行 */
+        }
+
+        .copyBtn {
+            position: relative ;
+            top:20px ;
+        }
+        .copyContext{
+            width: fit-content;
+            border: 10px solid transparent;
+            text-align: left;
+            margin: 0 auto;
+        }
     </style>
 
-<!-- 导航栏 -->
-<div class="navbar">
-    <a href="#">首页</a>
-    <a href="#">Python练习题目</a>
-    <a href="#">联系我们</a> 
-    
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <a href="#">首页</a>
+        <a href="#">Python练习题目</a>
+        <a href="#">联系我们</a>
 
-</div>
 
-<div id="content" class="centered">
-    <!-- 题目1 -->
-    <div class="question">
-        <h1>题目一要求打印出一首诗歌</h1>
-     
-        <button class="view-solution-btn">查看题解</button>
-        <div id="text-to-copy"  class="questionM solution" style="display:none; white-space: pre-line;">
-            <button onclick="copyText()">复制</button>
+    </div>
+
+    <div id="content" class="centered">
+        <!-- 题目1 -->
+        <div class="question">
+            <h1>题目一要求打印出一首诗歌</h1>
+
+            <button class="view-solution-btn">查看题解</button>
+   
+            <div class="questionM solution" style="display:none; white-space: pre-line;">
+        <button class="copyBtn" onclick="copyText()">复制</button>
+               <p class="copyContext" id="text-to-copy" style=" white-space: pre-line;">
             poem = """
             当你独自穿越森林深，
             星光闪烁映夜空明。
             枝叶摇曳，微风拂面，
             心中的宁静，无言传情。
-        
+            
             山川河流，自然和谐，
             大地的奇迹，永无休。
             如同这诗，流淌心间，
             生命之美，永远不穷。
             """
-        
+            
             print(poem)
+            </p>
 
-           
+
+            </div>
+
         </div>
-        
+
+        <!-- 可以添加更多问题和题解 -->
+        <div class="question">
+            <h1>题目二数学运算</h1>
+            <p class="questionT" style="white-space: pre-line;">
+                现在有一道数学题目
+
+                要求计算
+
+                100 +889 = ? 1024-156 = ? 17777/4=? 1920*778 = ?
+
+                要求用python实现
+
+            </p>
+            <button class="view-solution-btn">查看题解</button>
+              
+
+            <div  class="questionM solution" style="display:none; white-space: pre-line;">
+            <button class="copyBtn" onclick="copyText()">复制</button>
+             <p class="copyContext" id="text-to-copy" style=" white-space: pre-line;">
+            # 计算100 + 889
+            result1 = 100 + 889
+            
+            # 计算1024 - 156
+            result2 = 1024 - 156
+            
+            # 计算17777 / 4
+            result3 = 17777 / 4
+            
+            # 计算1920 * 778
+            result4 = 1920 * 778
+            
+            # 打印结果
+            print("100 + 889 = ", result1)
+            print("1024 - 156 = ", result2)
+            print("17777 / 4 = ", result3)
+            print("1920 * 778 = ", result4)
+            </p>
+
+            </div>
+
+        </div>
+
+
+
     </div>
 
-    <!-- 可以添加更多问题和题解 -->
-    <div class="question">
-        <h1>题目二数学运算</h1>
-         <p class="questionT" style="white-space: pre-line;">
-            现在有一道数学题目
-
-            要求计算 
-            
-            100 +889 = ?    1024-156 = ?  17777/4=?      1920*778 = ?
-            
-            要求用python实现
-        
-        </p>
-        <button class="view-solution-btn">查看题解</button>
-        <div id="text-to-copy"  class="questionM solution" style="display:none; white-space: pre-line;">
-            <button onclick="copyText()">复制</button>
-           
- # 计算100 + 889
-result1 = 100 + 889
-
-# 计算1024 - 156
-result2 = 1024 - 156
-
-# 计算17777 / 4
-result3 = 17777 / 4
-
-# 计算1920 * 778
-result4 = 1920 * 778
-
-# 打印结果
-print("100 + 889 = ", result1)
-print("1024 - 156 = ", result2)
-print("17777 / 4 = ", result3)
-print("1920 * 778 = ", result4)
-           
+    <!-- 模态框 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>请输入密码查看题解：</p>
+            <input type="text" id="passwordInput">
+            <button onclick="checkPassword()">提交</button>
         </div>
-        
     </div>
 
+    <script>
+        //复制文字
+        function copyText() {
+            var textToCopy = document.getElementById("text-to-copy");
 
+            // 创建一个文本输入框，将要复制的文本放入其中
+            var tempInput = document.createElement("textarea");
+            tempInput.value = textToCopy.textContent;
 
-</div>
+            // 设置文本框的样式，确保与原文本一致
+            tempInput.style.position = "absolute";
+            tempInput.style.left = "-9999px";
 
-<!-- 模态框 -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>请输入密码查看题解：</p>
-    <input type="text" id="passwordInput">
-    <button onclick="checkPassword()">提交</button>
-  </div>
-</div>
+            // 将文本输入框添加到文档中并选中文本
+            document.body.appendChild(tempInput);
+            tempInput.select();
 
-<script >
-    //复制文字
-  function copyText() {
-    var textToCopy = document.getElementById("text-to-copy");
+            // 尝试执行复制操作
+            document.execCommand("copy");
 
-    // 创建一个文本输入框，将要复制的文本放入其中
-    var tempInput = document.createElement("textarea");
-    tempInput.value = textToCopy.textContent;
+            // 从文档中移除文本输入框
+            document.body.removeChild(tempInput);
 
-    // 设置文本框的样式，确保与原文本一致
-    tempInput.style.position = "absolute";
-    tempInput.style.left = "-9999px";
+            // 提示用户已复制文本
+            showAlert(" 复制成功");
 
-    // 将文本输入框添加到文档中并选中文本
-    document.body.appendChild(tempInput);
-    tempInput.select();
+        }
 
-    // 尝试执行复制操作
-    document.execCommand("copy");
+        //警示框
+        function showAlert(s) {
+            var alertBox = document.createElement('div');
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '20%';
+            alertBox.style.left = '80%';
+            alertBox.style.transform = 'translate(-50%, -50%)';
+            alertBox.style.background = 'white';
+            alertBox.style.padding = '20px';
+            alertBox.style.border = '1px solid #ccc';
+            alertBox.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+            alertBox.textContent = s;
+            document.body.appendChild(alertBox);
 
-    // 从文档中移除文本输入框
-    document.body.removeChild(tempInput);
+            // 使用 setTimeout 来延迟执行关闭操作
+            setTimeout(function () {
+                // 关闭警告框
+                document.body.removeChild(alertBox);
+            }, 1000); // 1000毫秒等于1秒
+        }
 
-    // 提示用户已复制文本
-    showAlert(" 复制成功" );
-   
-}
+        // 获取模态框
+        var modal = document.getElementById("myModal");
 
-//警示框
-function showAlert(s) {
-    var alertBox = document.createElement('div');
-    alertBox.style.position = 'fixed';
-    alertBox.style.top = '20%';
-    alertBox.style.left = '80%';
-    alertBox.style.transform = 'translate(-50%, -50%)';
-    alertBox.style.background = 'white';
-    alertBox.style.padding = '20px';
-    alertBox.style.border = '1px solid #ccc';
-    alertBox.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-    alertBox.textContent = s;
-    document.body.appendChild(alertBox);
+        // 获取 <span> 元素，用于关闭模态框
+        var span = document.getElementsByClassName("close")[0];
 
-    // 使用 setTimeout 来延迟执行关闭操作
-    setTimeout(function() {
-        // 关闭警告框
-        document.body.removeChild(alertBox);
-    }, 1000); // 1000毫秒等于1秒
-}
+        // 当用户点击 <span> (x), 关闭模态框
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
 
-    // 获取模态框
-var modal = document.getElementById("myModal");
+        // 当用户点击任何地方关闭模态框
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
-// 获取 <span> 元素，用于关闭模态框
-var span = document.getElementsByClassName("close")[0];
+        // 打开模态窗口并保存当前按钮的引用
+        var currentBtn = null;
+        function openModal(event) {
+            currentBtn = event.target;
+            modal.style.display = "block";
+        }
 
-// 当用户点击 <span> (x), 关闭模态框
-span.onclick = function() {
-    modal.style.display = "none";
-}
+        // 检查密码是否正确
+        function checkPassword() {
+            var inputPassword = document.getElementById("passwordInput").value;
+            var correctPassword = "1231237";  // 你可以设置你自己的密码
 
-// 当用户点击任何地方关闭模态框
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+            if (inputPassword === correctPassword) {
+                modal.style.display = "none";
+                // 找到并显示正确的题解
+                var solution = currentBtn.closest(".question").querySelector(".solution");
+                solution.style.display = "block";
+            } else {
+                alert("密码错误!");
+            }
+        }
 
-// 打开模态窗口并保存当前按钮的引用
-var currentBtn = null;
-function openModal(event) {
-    currentBtn = event.target;
-    modal.style.display = "block";
-}
+        // 为"查看题解"按钮添加事件监听器
+        var viewSolutionBtns = document.querySelectorAll(".view-solution-btn");
+        viewSolutionBtns.forEach(function (btn) {
+            btn.addEventListener("click", openModal);
+        });
 
-// 检查密码是否正确
-function checkPassword() {
-    var inputPassword = document.getElementById("passwordInput").value;
-    var correctPassword = "1231237";  // 你可以设置你自己的密码
-
-    if (inputPassword === correctPassword) {
-        modal.style.display = "none";
-        // 找到并显示正确的题解
-        var solution = currentBtn.closest(".question").querySelector(".solution");
-        solution.style.display = "block";
-    } else {
-        alert("密码错误!");
-    }
-}
-
-// 为"查看题解"按钮添加事件监听器
-var viewSolutionBtns = document.querySelectorAll(".view-solution-btn");
-viewSolutionBtns.forEach(function(btn) {
-    btn.addEventListener("click", openModal);
-});
-
-</script> <!-- 引入外部JavaScript文件 -->
+    </script> <!-- 引入外部JavaScript文件 -->
 </body>
+
 </html>
